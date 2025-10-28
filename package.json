@@ -1,0 +1,49 @@
+{
+    "name": "io8",
+    "version": "1.0.0",
+    "homepage": "https://alexstevovich.com/r/io8-nodejs",
+    "author": {
+        "name": "Alex Stevovich",
+        "email": "dev@alexstevovich.com",
+        "url": "https://alexstevovich.com"
+    },
+    "description": "Minimal filesystem I/O helper with UTF-8 defaults.",
+    "type": "module",
+    "main": "./src/index.js",
+    "files": [
+        "./src"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "poshify": "npx poshify",
+        "pretty": "npx prettier --write .",
+        "lint": "eslint ./src/",
+        "lint:fix": "eslint --fix ./src/",
+        "test": "npx vitest --run",
+        "build": "npm run poshify && npm run pretty && npm run lint:fix && npm run lint"
+    },
+    "keywords": [
+        "io8",
+        "io",
+        "file",
+        "filesystem",
+        "fs",
+        "read",
+        "write",
+        "copy",
+        "sync",
+        "async",
+        "utility",
+        "nodejs",
+        "lightweight",
+        "helper",
+        "utf8"
+    ],
+    "devDependencies": {
+        "eslint": "^9.36.0",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-prettier": "^5.5.4",
+        "prettier": "^3.6.2",
+        "vitest": "^4.0.4"
+    }
+}
