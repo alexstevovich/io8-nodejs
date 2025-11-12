@@ -1,13 +1,13 @@
 {
     "name": "io8",
-    "version": "1.0.0",
-    "homepage": "https://alexstevovich.com/r/io8-nodejs",
+    "version": "1.0.2",
+    "homepage": "https://alexstevovich.com/a/io8-nodejs",
     "author": {
         "name": "Alex Stevovich",
         "email": "dev@alexstevovich.com",
         "url": "https://alexstevovich.com"
     },
-    "description": "Minimal filesystem I/O helper with UTF-8 defaults.",
+    "description": "Minimal filesystem I/O helper with UTF-8 defaults",
     "type": "module",
     "main": "./src/index.js",
     "files": [

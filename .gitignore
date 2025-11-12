@@ -65,7 +65,4 @@ logs/
 *.tmp
 
 # Filezord output
-.zord
 .filezord
-
-/temptest/

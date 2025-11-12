@@ -1,6 +1,6 @@
 /*
  * io8
- * https://alexstevovich.com/r/io8-nodejs
+ * https://alexstevovich.com/a/io8-nodejs
  *
  * Copyright (c) 2015–2025 Alex Stevovich
  *
@@ -26,30 +26,41 @@ import fsSync from 'fs';
 import fs from 'fs/promises';
 
 /* ---------- Async ---------- */
-export async function readFile(filePath, { encoding = 'utf8' } = {}) {
+async function readFile(filePath, { encoding = 'utf8' } = {}) {
     return fs.readFile(filePath, encoding);
 }
-export async function writeFile(filePath, data, { encoding = 'utf8' } = {}) {
+async function writeFile(filePath, data, { encoding = 'utf8' } = {}) {
     await fs.writeFile(filePath, data, encoding);
 }
-export async function copyFile(src, dest, { encoding = 'utf8' } = {}) {
+async function copyFile(src, dest, { encoding = 'utf8' } = {}) {
     const data = await readFile(src, { encoding });
     await writeFile(dest, data, { encoding });
 }
 
 /* ---------- Sync ---------- */
-export function readFileSync(filePath, { encoding = 'utf8' } = {}) {
+
+function readFileSync(filePath, { encoding = 'utf8' } = {}) {
     return fsSync.readFileSync(filePath, encoding);
 }
-export function writeFileSync(filePath, data, { encoding = 'utf8' } = {}) {
+
+function writeFileSync(filePath, data, { encoding = 'utf8' } = {}) {
     fsSync.writeFileSync(filePath, data, encoding);
 }
-export function copyFileSync(src, dest, { encoding = 'utf8' } = {}) {
+
+function copyFileSync(src, dest, { encoding = 'utf8' } = {}) {
     const data = readFileSync(src, { encoding });
     writeFileSync(dest, data, { encoding });
 }
 
-/* ---------- Default Export ---------- */
+export {
+    readFile as read,
+    writeFile as write,
+    copyFile as copy,
+    readFileSync as readSync,
+    writeFileSync as writeSync,
+    copyFileSync as copySync,
+};
+
 export default {
     read: readFile,
     write: writeFile,
